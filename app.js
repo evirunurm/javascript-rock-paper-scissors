@@ -1,25 +1,7 @@
 
 let scorePlayer = 0;
 let scoreComputer = 0;
-
 game();
-// let resultRound = playRound(playerSelection, computerSelection);
-
-//Input Player --> playerSelection
-
-// function playerPlay() {
-//   if (playerInput === undefined || playerInput === "" || playerInput === null) {
-//     ('Write a valid answer!')
-//     playerPlay();
-//   } else if (playerInput.toLowerCase() == "rock" || playerInput.toLowerCase() == "scissors" || playerInput.toLowerCase() == "paper") {
-//       return playerInput.toLowerCase();
-//   } else {
-//     console.log('Check your grammar or write a valid answer!')
-//     playerPlay();
-//   }
-// }
-
-//Generate Random number --> computerSelection
 
 function computerPlay() {
   let randomNumber = parseInt(3 * Math.random(Number));
@@ -35,19 +17,6 @@ function computerPlay() {
   }
 }
 
-//COMPARE : playerSelection vs computerSelection
-//  If playerSelection(case-insensitive) == computerSelection --> TIE. Nothing.
-//  If playerSelection(case-insensitive) is ROCK and
-//        == computerSelection = SCISSORS --> scorePlayer +1
-//        == computerSelection = PAPER --> scoreComputer +1
-
-//  If playerSelection(case-insensitive) is SCISSORS and
-//        == computerSelection = ROCK --> scoreComputer +1
-//        == computerSelection = PAPER --> scorePlayer +1
-
-//  If playerSelection(case-insensitive) is PAPER and
-//        == computerSelection = SCISSORS --> scoreComputer +1
-//        == computerSelection = ROCK --> scorePlayer +1
 
 function playRound(playerSelection, computerSelection) {
   switch (playerSelection.toLowerCase()) {
@@ -88,9 +57,7 @@ function playRound(playerSelection, computerSelection) {
   return [scorePlayer, scoreComputer];
 }
 
-//Total of 5 times.
-//After 5 rounds --> COMPARE : scoreComputer vs scorePlayer.
-//If scoreComputer < scorePlayer --> Player wins, else Computer wins.
+
 
 function game() {
   while (scorePlayer < 5 && scoreComputer < 5) {
